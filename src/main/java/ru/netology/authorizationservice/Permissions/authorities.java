@@ -1,5 +1,5 @@
 package ru.netology.authorizationservice.Permissions;
 
-public enum Authorities {
+public enum authorities {
     READ, WRITE, DELETE
 }

@@ -1,17 +1,17 @@
 package ru.netology.authorizationservice.Repository;
 
 import org.springframework.stereotype.Repository;
-import ru.netology.authorizationservice.Permissions.Authorities;
+import ru.netology.authorizationservice.Permissions.authorities;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-import static ru.netology.authorizationservice.Permissions.Authorities.*;
+import static ru.netology.authorizationservice.Permissions.authorities.*;
 import ru.netology.authorizationservice.User.User;
 @Repository
-public class UserRepository {
+public class userRepository {
 
     private Map<String, User> users = new ConcurrentHashMap<>();
 
@@ -25,7 +25,7 @@ public class UserRepository {
         users.put(user3.getLogin(), user3);
     }
 
-    public List<Authorities> getUserAuthorities(String login, String password) {
+    public List<authorities> getUserAuthorities(String login, String password) {
         User user = users.get(login);
         return (user != null && user.getPassword().equals(password)) ? user.getAuthorities() : null;
     }
